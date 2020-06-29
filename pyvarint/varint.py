@@ -1,10 +1,9 @@
 """Varint encode and decode"""
 
-import sys
-from StringIO import StringIO as BytesIO
+from io import BytesIO
 
 
-def encode(number):
+def encode(number: int) -> bytes:
     """Encode to varint"""
     buf = b""
 
@@ -20,9 +19,10 @@ def encode(number):
     return buf
 
 
-def decode(buf):
+def decode(buf: bytes) -> int:
     """Decode to bytes"""
     stream = BytesIO(buf)
+
     shift = 0
     result = 0
 
@@ -42,7 +42,7 @@ def decode(buf):
     return result
 
 
-def encoding_length(n):
+def encoding_length(n: int) -> int:
     """The number of bytes this number will be encoded as."""
     N1 = pow(2, 7)
     N2 = pow(2, 14)
