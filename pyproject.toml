@@ -5,7 +5,7 @@ build-backend = "poetry.masonry.api"
 [tool.poetry]
 name = "pyvarint"
 version = "0.0.1a2"
-description = "Varints, a method of serializing integers using one or more bytes "
+description = "Varints, a method of serializing integers using one or more bytes"
 authors = ["decentral1se <hi@decentral1.se>"]
 maintainers = ["decentral1se <hi@decentral1.se>"]
 license = "GPLv3"
