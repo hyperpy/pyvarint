@@ -16,3 +16,7 @@ def test_encoding_length():
     for idx in range(0, 53):
         number = floor(pow(2, idx))
         assert len(encode(number)) == encoding_length(number)
+
+
+def test_encode_bytes_count():
+    assert len(encode(300)) == 2
