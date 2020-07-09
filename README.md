@@ -4,6 +4,11 @@
 
 ## Varints, a method of serializing integers using one or more bytes
 
+> Generally in Python, integers are stored as long meaning that they will use
+> at least 32 bits. When storing many numbers which do not require 32 bits,
+> this would seem to be significantly wasteful; variable length representation
+> should be able to assist in such cases.
+
 ## Install
 
 ```sh
