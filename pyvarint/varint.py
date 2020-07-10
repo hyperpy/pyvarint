@@ -4,7 +4,10 @@ from io import BytesIO
 
 
 def encode(number: int) -> bytes:
-    """Encode to varint"""
+    """Encode to varint
+
+    :param number: the integer to encode
+    """
     buf = b""
 
     while True:
@@ -20,7 +23,10 @@ def encode(number: int) -> bytes:
 
 
 def decode(buf: bytes) -> int:
-    """Decode to bytes"""
+    """Decode to bytes
+
+    :param buf: the buffer to decode to an integer
+    """
     stream = BytesIO(buf)
 
     shift = 0
@@ -43,7 +49,10 @@ def decode(buf: bytes) -> int:
 
 
 def encoding_length(n: int) -> int:
-    """The number of bytes this number will be encoded as."""
+    """The number of bytes this number will be encoded as.
+
+    :param n: the number for which the encoding length will be calculated
+    """
     N1 = pow(2, 7)
     N2 = pow(2, 14)
     N3 = pow(2, 21)
