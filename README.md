@@ -18,13 +18,18 @@ $ pip install pyvarint
 ## Example
 
 ```python
-from random import sample
 from pyvarint import decode, encode
 
-ten_rand_ints = sample(range(100), 10)
+encoded = encode(666)
+decoded = decode(encoded)
 
-for rand_int in ten_rand_ints:
-    encoded = encode(rand_int)
-    decoded = decode(encoded)
-    assert decoded == rand_int
+print("number: 666", f"encoded: {encoded}", f"decoded: {decoded}", sep="\n")
+```
+
+Output:
+
+```sh
+number: 666
+encoded: b'\x9a\x05'
+decoded: 666
 ```
